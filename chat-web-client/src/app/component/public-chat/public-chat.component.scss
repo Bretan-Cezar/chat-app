@@ -1,0 +1,126 @@
+@use '../../../variables' as vars;
+
+.chat-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: vars.$login-background-dark
+}
+
+app-public-chat-nav-bar {
+  width: 100%;
+
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+
+  height: max(6vh, 48px);
+}
+
+app-public-chat-box {
+  width: 100%;
+  height: min(calc(86vh - 4px), calc(100vh - 116px));
+}
+
+
+
+
+// CHAT INPUT
+
+form {
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: max(8vh, 64px);
+
+  align-items: center;
+
+  border-top-width: 2px;
+  border-top-color: black;
+  border-top-style: solid;
+}
+
+.send-button-wrapper {
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: row-reverse;
+
+
+  background-color: vars.$primary-dark;
+  justify-content: center;
+  align-items: center;
+
+  button {
+
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    & > *[role=img] {
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+  }
+}
+
+.text-input-wrapper {
+
+  width: 100%;
+  height: 100%;
+
+  background-color: vars.$primary-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  textarea {
+
+    outline: none;
+    font-family: "Roboto", monospace;
+    justify-content: center;
+    overflow: hidden;
+    resize: none;
+    margin: 0;
+    border-radius: 60px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    font-size: 1rem;
+    padding: 15px 24px;
+    color: #FFFFFF;
+    background-color: vars.$input-background-dark;
+    width: calc(100% - 44px - 16px);
+    height: calc(100% - 46px);
+  }
+}
+
+// NOTIFICATIONS
+
+.user-notification-wrapper {
+
+  max-width: 50%;
+  height: 12.5%;
+  display: flex;
+  flex-direction: row-reverse;
+
+  position: absolute;
+  top: max(6vh, 50px);
+  right: 0;
+  z-index: 10;
+
+  app-notification-bubble {
+
+    display: block;
+  }
+}
+

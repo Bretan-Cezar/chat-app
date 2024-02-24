@@ -1,0 +1,25 @@
+<div class="chat-wrapper">
+
+    <app-public-chat-nav-bar />
+
+    <div class="user-notification-wrapper">
+        <app-notification-bubble [userNotification]=this.lastNotification />
+    </div>
+
+    <app-public-chat-box
+            [messageList]="this.messageList"
+            [scrollLock]="this.scrollLock"
+            (onLoadMore)="this.loadMoreMessages($event)"
+            (onInternalLockChange)="this.updateLock($event)" />
+
+
+    <form [formGroup]="textInputFormGroup" (ngSubmit)="sendMessage()">
+        <div class="text-input-wrapper">
+            <textarea matInput formControlName="text" placeholder="Type a message..."></textarea>
+        </div>
+
+        <div class="send-button-wrapper">
+            <button mat-icon-button type="submit"><mat-icon [ngStyle]="{color: '#FFFFFF'}">send</mat-icon></button>
+        </div>
+    </form>
+</div>

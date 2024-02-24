@@ -1,0 +1,7 @@
+<div class="notification-bubble-content"
+     [ngStyle]="{backgroundColor: this.color}"
+     [@notification-transition]="visible ? 'visible' : 'hidden'"
+     [@notification-display]="visible ? 'visible' : 'hidden'">
+
+    {{this.text}}
+</div>

@@ -1,0 +1,8 @@
+<div class="recv-text-bubble-content">
+    <div class="recv-bubble-header">
+        <div class="recv-header-sender-name">{{textMessage!.name}}</div>
+        <div class="recv-header-message-datetime">{{getTimeFromISO8601String(offsetISO8601String(textMessage!.datetime))}}</div>
+    </div>
+    <div class="recv-text-bubble-message">{{textMessage!.text}}</div>
+</div>
+

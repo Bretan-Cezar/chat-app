@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+$global-heading-font: "Trebuchet MS";
+$login-background-dark: mat.get-color-from-palette(mat.$gray-palette, 900);
+$input-background-dark: mat.get-color-from-palette(mat.$gray-palette, 700);
+$primary-dark: mat.get-color-from-palette(mat.$purple-palette, 800);
+$recv-bubble-dark: mat.get-color-from-palette(mat.$gray-palette, 600);
+$heading-color-dark: #FFFFFF

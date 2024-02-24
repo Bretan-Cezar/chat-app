@@ -1,0 +1,46 @@
+<div class="login-wrapper">
+    <h1>Public Login</h1>
+    <div class="public-user-form-wrapper">
+        <form [formGroup]="publicUserFormGroup" (ngSubmit)="publicLogin()" autocomplete="off">
+            <div class="public-form-field-wrapper">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="publicUserFormGroup.controls['name'].hasError('required')">Name cannot be empty!</mat-error>
+                    <mat-error *ngIf="publicUserFormGroup.controls['name'].hasError('minlength')">Name must be 3-30 characters long!</mat-error>
+                    <mat-error *ngIf="publicUserFormGroup.controls['name'].hasError('maxlength')">Name must be 3-30 characters long!</mat-error>
+                    <mat-error *ngIf="publicUserFormGroup.controls['name'].hasError('alphanumericName')">Name must contain only letters and digits!</mat-error>
+                    <mat-error *ngIf="publicUserFormGroup.controls['name'].hasError('forbiddenName')">Such a name is forbidden!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="public-login-btn-wrapper">
+                <button mat-raised-button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <h1>Private Login</h1>
+    <div class="private-user-form-wrapper">
+        <form [formGroup]="privateUserFormGroup" (ngSubmit)="privateLogin()" autocomplete="off" class="private-user-form-wrapper">
+
+            <div class="private-form-field-wrapper">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="privateUserFormGroup.controls['name'].errors?.['required']">Name cannot be empty!</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="private-form-field-wrapper">
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <mat-error *ngIf="privateUserFormGroup.controls['password'].errors?.['required']">Password cannot be empty!</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="private-login-btn-wrapper">
+                <button mat-raised-button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
